@@ -22,7 +22,8 @@
             "mandober\\functional\\": "src/"
         },
         "files": [
-            "src/println.php"
+            "src/println.php",
+            "src/finkel.php"
         ]
     },
     "scripts"    : {
