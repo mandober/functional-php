@@ -1,0 +1,36 @@
+{
+    "name"       : "mandober/functional-php",
+    "description": "Putting the lipstick",
+    "keywords"   : ["functional php", "fp"],
+    "homepage"   : "http://github.com/mandober/functional-php",
+    "license"    : "MIT",
+    "type"       : "library",
+    "authors"    : [
+        {
+            "name" : "Ivan Ilic",
+            "email": "mandober@gmail.com",
+            "role" : "Developer"
+        }
+    ],
+    "version"           : "0.2.1",
+    "minimum-stability" : "stable",
+    "require"           : {
+        "php": ">=7.2.0"
+    },
+    "autoload" : {
+        "psr-4": {
+            "mandober\\functional\\": "src/"
+        },
+        "files": [
+            "src/println.php"
+        ]
+    },
+    "scripts"    : {
+        "serve"  : "php -S localhost:8080 -t examples/",
+        "test"   : "phpunit",
+        "testdox": "phpunit --testdox"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    }
+}
