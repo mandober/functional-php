@@ -4,14 +4,11 @@
 // ================================================================= AUTOLOADER
 require_once '../vendor/autoload.php';
 
-
 // ============================================================ IMPORTS ALIASED
-use function mandober\fprelude\{println as p, dump as d};
+use function mandober\fu\{println as p, dump as d};
 
 // =========================================================== IMPORT FUNCTIONS
-use function mandober\fprelude\finkel;
-
-
+use function mandober\fu\finkel;
 
 // ==================================================================== SANDBOX
 p('orange', 12, true, 3.44);
@@ -19,7 +16,8 @@ d('orange', [12], true, 3.44, [ 'r' => 'red', 'b' => 'blue']);
 
 
 # finkeling
-function add($a, $b, $c, $d) {
+function add($a, $b, $c, $d)
+{
     return $a + $b + $c + $d;
 }
 

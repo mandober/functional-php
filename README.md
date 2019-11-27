@@ -4,7 +4,7 @@
 **Typing**
 - `strict_types` always on
 - type annotated
-- phpdocs quasi-Haskell signatures
+- docblocks with quasi-Haskell signatures
 
 **Arity**
 - unary functions throughout
@@ -21,7 +21,7 @@
 - ~~mix n' randomize after each 100 ticks?~~
 
 **Parameters**
-- general order of arguments is *Functions First Data Last* (Fx/Tx)
+- general order of arguments is *Functions First Data Last*, Fx/Tx
 - no optional parameters (use specific func variant instead)
 - ~~how about them variadics? no? worse?~~
 - no variadic parameter
