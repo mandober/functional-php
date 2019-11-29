@@ -11,14 +11,12 @@ namespace mandober\fu;
 function finkel(callable $f, ...$x)
 {
     $argc = \mandober\fu\arity($f);
-    return $argc === count($x) ? $f(...$x) :
-    (
-        function (...$y) use ($f, $x, $argc) {
-            return $argc === count($x) + count($y)
+    return $argc === count($x)
+        ? $f(...$x)
+        : (fn(...$y) =>
+            $argc === count($x) + count($y)
                 ? $f(...$x, ...$y)
                 : finkel($f, ...$x, ...$y)
-            ;
-        }
-    )
-    ;
+          )
+        ;
 }

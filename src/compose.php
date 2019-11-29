@@ -16,11 +16,8 @@ namespace mandober\fu;
 function compose(callable ...$funcs)
 {
     return \mandober\fu\foldl(
-        // accumulator
-        fn($a) => $a,
-        // binary reducer
-        fn($acc, $f) => fn($x) => $f($acc($x)), // $x is the arg
-        // array to reduce
-        $fs = \array_reverse($funcs)
+        fn($a) => $a,                               // accumulator
+        fn($acc, $f) => fn($arg) => $f($acc($arg)), // binary reducer
+        $fs = \array_reverse($funcs)                // array to reduce
     );
 }

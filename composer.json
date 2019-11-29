@@ -20,8 +20,8 @@
         },
         "files":
             [ "src/arity.php"
-            , "src/compose.php"
             , "src/closurize.php"
+            , "src/compose.php"
             , "src/curry.php"
             , "src/dump.php"
             , "src/finkel.php"

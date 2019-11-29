@@ -21,5 +21,6 @@ function arity(callable $f) : int
     if (!$f instanceof \Closure) {
         $f = \mandober\fu\closurize($f);
     }
+
     return (new \ReflectionFunction($f))->getNumberOfParameters();
 }

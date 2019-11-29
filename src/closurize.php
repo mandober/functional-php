@@ -14,5 +14,6 @@ function closurize(callable $f) : \Closure
     if (!$f instanceof \Closure) {
         return \Closure::fromCallable($f);
     }
+
     return $f;
 }
