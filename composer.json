@@ -12,15 +12,20 @@
     ],
     "minimum-stability" : "stable",
     "require"           : {
-        "php": ">=7.2.0"
+        "php": ">=7.4.0"
     },
     "autoload" : {
         "psr-4": {
             "mandober\\fu\\": "src/"
         },
-        "files": [
-            "src/println.php",
-            "src/finkel.php"
+        "files":
+            [ "src/arity.php"
+            , "src/compose.php"
+            , "src/closurize.php"
+            , "src/curry.php"
+            , "src/dump.php"
+            , "src/finkel.php"
+            , "src/foldl.php"
         ]
     },
     "scripts"    : {

@@ -1,7 +1,15 @@
 <?php declare(strict_types=1);
 
-// Lambda Calculus
-// Combinators as PHP arrow functions (PHP 7.4+)
+namespace mandober\fu;
+
+/*
+Combinators as PHP arrow functions (PHP 7.4+)
+http://www.angelfire.com/tx4/cus/combinator/birds.html
+http://www.angelfire.com/tx4/cus/combinator/birds.html
+https://blog.lahteenmaki.net/combinator-birds.html
+http://dkeenan.com/Lambda/index.htm
+http://hackage.haskell.org/package/data-aviary-0.4.0/docs/Data-Aviary-Birds.html
+*/
 
 
 $B   = fn($a) => fn($b) => fn($c) => $a($b($c));

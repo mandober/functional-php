@@ -2,20 +2,18 @@
 
 namespace mandober\fu;
 
-function println(...$args)
-{
-    $a = implode(', ', $args);
-    echo $a, PHP_EOL;
-}
-
-
-function dump(...$xs)
+/**
+ * Print scalars with echo, compound types with print_r.
+ *
+ * @param mixed ...$xs One or more arguments.
+ */
+function dump(...$xs) : void
 {
     foreach ($xs as $x) {
         if (is_scalar($x)) {
             echo $x, PHP_EOL;
         } else {
-            var_dump($x);
+            print_r($x);
         }
     }
 }
