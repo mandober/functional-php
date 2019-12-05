@@ -18,9 +18,7 @@ namespace mandober\fu;
  */
 function arity(callable $f) : int
 {
-    if (!$f instanceof \Closure) {
-        $f = \mandober\fu\closurize($f);
-    }
-
-    return (new \ReflectionFunction($f))->getNumberOfParameters();
+    return (new \ReflectionFunction(
+        ($f instanceof \Closure) ? $f : \Closure::fromCallable($f)
+    ))->getNumberOfParameters();
 }
