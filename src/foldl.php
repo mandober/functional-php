@@ -5,15 +5,13 @@ namespace mandober\fu;
 /**
  * foldl folds an array from left.
  *
- * @param callable $reducer Reducer is a binary function that is fed
- * the accumulator and the current element.
+ * @param callable $reducer A binary function that is fed the accumulator and the current element's value.
  * @param mixed $acc The initial value of accumulator.
  * @param array $arr The array to reduce.
- *
  * @return mixed The reduced value.
- *
- * @todo further feed reducer with optional key, array
  */
+const foldl = '\mandober\fu\foldl';
+
 function foldl($acc, callable $reducer, array $items)
 {
     // if array empty, return acc

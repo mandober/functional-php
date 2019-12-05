@@ -15,6 +15,8 @@ use const \mandober\fu\foldr;
  * flip(f) :: ((b, a) -> c)
  *
  */
+const flip = '\mandober\fu\flip';
+
 function flip(callable $f) : callable
 {
     return fn($b, $a) => $f($a, $b);
@@ -35,6 +37,8 @@ function flip(callable $f) : callable
  *
  * flip_c === flip . curry
  */
+const flip_c = '\mandober\fu\flip_c';
+
 function flip_c(callable $f) : callable
 {
     return fn($b) => fn($a) => $f($a)($b);
@@ -45,15 +49,18 @@ function flip_c(callable $f) : callable
 /**
  * Takes a ternary callable and flips its first two args.
  *
- * abc_bac :: ((f,a,xs) -> c) -> ((a,f,xs) -> c)
+ * flip_ :: ((f,a,xs) -> c) -> ((a,f,xs) -> c)
  */
-function abc_bac(callable $f)
+const flip_ = '\mandober\fu\flip_';
+
+function flip_(callable $f)
 {
     // return fn($b) => fn($a) => fn($c) => $f($a)($b)($c);
     return fn($a,$b,$c) => $f($b,$a,$c);
 }
 
 
+/*
 $cb = fn($a, $b) => $a+$b;
 $ar = [1,2,3,4];
 
@@ -61,7 +68,7 @@ $r1 = foldr(0, $cb, $ar);
 echo $r1, PHP_EOL;
 
 
-$fdr = abc_bac(foldr);
+$fdr = flip_(foldr);
 // print_r($fdr);
 
 // pass binary to foldr
@@ -71,3 +78,4 @@ print_r($r);
 // pass curryied "binary" to foldr
 // $s = $fdr(fn($a) => fn($b) => $a+$b, 0, [1,2,3,4]);
 // echo $s;
+*/

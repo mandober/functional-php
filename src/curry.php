@@ -20,6 +20,8 @@ namespace mandober\fu;
  * both arguments collected, `f` is then applied to `(3,5)` or, more
  * precisely, to `(3)(5)` since `f` was curryied.
  */
+const curry = '\mandober\fu\curry';
+
 function curry(callable $f) : callable
 {
     $_curry = function($f, $args = []) use (&$_curry)

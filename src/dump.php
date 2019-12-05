@@ -7,6 +7,8 @@ namespace mandober\fu;
  *
  * @param mixed ...$xs One or more arguments.
  */
+const dump = '\mandober\fu\dump';
+
 function dump(...$xs) : void
 {
     foreach ($xs as $x) {

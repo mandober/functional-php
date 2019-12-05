@@ -38,6 +38,9 @@ namespace mandober\fu;
  * @return callable|mixed Either the "arg collector" func or the final value.
  *
  */
+
+const finkel = '\mandober\fu\finkel';
+
 function finkel(callable $f, ...$xs)
 {
     $argc = (new \ReflectionFunction(
@@ -53,3 +56,8 @@ function finkel(callable $f, ...$xs)
           )
         ;
 }
+
+/*
+$s = fn($a, $b, $c, $d) => $a + $b + $c + $d;
+echo finkel($s)(1,2)()(3)()()(4), PHP_EOL;
+*/

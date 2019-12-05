@@ -3,7 +3,7 @@
 namespace mandober\fu;
 
 /**
- * Compose two or more callables.
+ * HOF that composes callables, returning the callable that expects an argument.
  *
  * @param callable ...$funcs Two or more callables.
  * @return callable Composed callables that expect to be fed the arg.
@@ -13,11 +13,13 @@ namespace mandober\fu;
  * The subsequent callables also expect a single argument, therefore
  * each callable should take only one argument (and return one value).
  */
-function compose(callable ...$funcs)
+const compose = '\mandober\fu\compose';
+
+function compose(callable ...$fs)
 {
     return \mandober\fu\foldl(
-        fn($a) => $a,                               // accumulator
-        fn($acc, $f) => fn($arg) => $f($acc($arg)), // binary reducer
-        $fs = \array_reverse($funcs)                // array to reduce
+        fn($a) => $a,                               // accumulator (id)
+        fn($acc, $f) => fn($arg) => $f($acc($arg)), // reducer
+        $fs = \array_reverse($fs)                   // array to reduce
     );
 }

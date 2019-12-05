@@ -6,16 +6,12 @@ namespace mandober\fu;
  * Get the number of parameters of a callable.
  *
  * @param callable $f A callable.
- *
  * @return int The number of parameters as integer.
  *
- * Callable types:
- * - string containg 'label' (named function)
- * - string containg 'static_class::method_label' (named function)
- * - array where the first element is string (named function)
- * - object of Closure class
- * - object of a class with the __invoke method
+ * Callable types are special forms of strings, arrays, objects
  */
+const arity = '\mandober\fu\arity';
+
 function arity(callable $f) : int
 {
     return (new \ReflectionFunction(
